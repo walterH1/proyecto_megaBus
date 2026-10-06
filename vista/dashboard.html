@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+  </head>
+  <body>
+
+    <header>
+      <div class="left">
+        <div class="menu-container">
+          <div class="menu" id="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="brand">
+          <img src="../img/bus.jpg" alt="icon-udemy" class="logo" />
+          <span class="name">MEGA BUS</span>
+        </div>
+      </div>
+      <div class="derecha">
+        <div class="notif">
+          <a href="../vista/notificaciones_admin.html">
+          <img src="../icons/notifications-alert-svgrepo-com.svg" alt="Notificaciones" style="width: 32px; height: 32px; cursor: pointer;">
+          </a>
+          <span id="contador-notificaciones" style="
+            position: absolute;
+            top: 6px;
+            right: 192px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 50%;
+            display: none;
+          ">0</span>
+        </div>
+        <div class="right">
+        <a href="../vista/asignar_rutas.html">
+          <img src="../icons/task-svgrepo-com (2).svg" />
+          <p>ASIGNAR RUTA</p>
+        </a>
+      </div>
+      </div>
+      
+    </header>
+
+    <div class="sidebar" id="sidebar">
+      <nav>
+        <ul>
+          <li>
+            <a href="../vista/dashboard.html" class="selected">
+              <img src="../icons/dashboard-svgrepo-com.svg" alt="" />
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="../vista/conductores.html">
+              <img src="../icons/driving-test-svgrepo-com.svg" alt="" />
+              <span>Conductores</span>
+            </a>
+          </li>
+          <li>
+            <a href="../vista/vehiculos.html">
+              <img src="../icons/bus-svgrepo-com.svg" alt="" />
+              <span>Vehículos</span>
+            </a>
+          </li>
+          <li>
+            <a href="../vista/rutas.html">
+              <img src="../icons/route-svgrepo-com.svg" alt="" />
+              <span>Rutas</span>
+            </a>
+          </li>
+          <li>
+            <a href="../vista/reportes.html">
+              <img src="../icons/report-pie-chart-8-svgrepo-com.svg" alt="" />
+              <span>Reportes</span>
+            </a>
+          </li>
+          <li>
+            <a href="../vista/notificaciones_admin.html">
+              <img src="../icons/alert-triangle-svgrepo-com.svg" alt="" />
+              <span>Aletas del Sistema</span>
+            </a>
+          </li>
+          <li>
+            <a href="../vista/usuarios.html">
+              <img src="../icons/users-svgrepo-com.svg" alt="" />
+              <span>usuarios</span>
+            </a>
+          </li>
+          <li>
+            <a href="../vista/login.html">
+              <img src="../icons/logout-3-svgrepo-com.svg" alt="" />
+              <span>Cerrar Sesion</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="gif" style="
+        background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTNobGt3cHBodmpyeHVjcmdwMWE3MzRvNnkweWEyYndhbGNweW5hayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AQY0N1tpkfaQAjtx99/giphy.gif'); 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 250px; 
+        width: 250px;
+        margin-left: 22px;
+        margin-top: 100px;
+        background-color: brown;">
+      </div>
+
+    </div>
+
+    <main id="main">
+        <div class="content_general">
+    
+          <div class="block_1">
+                <div class="sub">
+              <div class="bad">
+                <img src="../icons/bus-svgrepo-com (1).svg" alt="">
+              </div>
+              <div class="tap" id="vehiculosActivos">
+                <p class="dat">0</p>
+                <p class="info">Vehículos activos</p>
+              </div>
+            </div>
+            <div class="sub">
+              <div class="bad">
+                <img src="../icons/delivery-man-driver-svgrepo-com.svg" alt="">
+              </div>
+              <div class="tap" id="conductoresActivos">
+                <p class="dat">0</p>
+                <p class="info">Conductores activos</p>
+              </div>
+            </div>
+            <div class="sub">
+              <div class="bad">
+                <img src="../icons/alert-svgrepo-com.svg" alt="">
+              </div>
+              <a href="../vista/velocidades.html" style="text-decoration: none; color: black;">
+              <div class="tap" id="alertasHoy">
+                <p class="dat">0</p>
+                <p class="info">Alertas de hoy</p>
+              </div>
+              </a>
+            </div>
+            <div class="sub">
+              <div class="bad">
+                <img src="../icons/destination-2-svgrepo-com.svg" alt="">
+              </div>
+              <div class="tap" id="viajesMes">
+                <p class="dat">0</p>
+                <p class="info">Viajes realizados Mes</p>
+              </div>
+            </div>
+          </div>
+
+      
+          <div class="block_2">
+     
+            <div class="med_a">
+              <canvas id="alertasVehiculosChart" width="400" height="200"></canvas>
+            </div>
+
+            <div class="med_b">
+              <canvas id="estadoVehiculosChart" width="300" height="300"></canvas>
+            </div>
+
+ 
+            <div class="med_c">
+              <canvas id="incidenciasChart" width="300" height="300"></canvas>
+            </div>
+          </div>
+
+         
+          <div class="block_3">
+      
+            <div class="foot_a">
+              <p style="font-size: 20px; font-weight: 600;">Historial reciente</p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>N</th>
+                    <th>Vehículo</th>
+                    <th>Ruta</th>
+                    <th>Fecha</th>
+                  </tr>
+                </thead>
+                <tbody id="tablaHistorial">
+                 
+                </tbody>
+              </table>
+            </div>
+
+        
+            <div class="foot_b">
+              <p style="font-size: 20px; font-weight: 600;">Notificaciones</p>
+              <ul id="listaNotificaciones" class="list-group">
+     
+              </ul>
+            </div>
+
+           
+            <div class="foot_c">
+              <canvas id="viajesLineaChart" width="400" height="310"></canvas>
+            </div>
+          </div>
+        </div>
+
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/notificacion_icono.js"></script>
+  </body>
+</html>
